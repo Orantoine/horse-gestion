@@ -49,6 +49,12 @@ public class HorseController {
         HorseDto horseDto = horseService.getHorseById(id);
         return horseDto != null ? new ResponseEntity<>(horseDto,HttpStatus.OK) : new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
     }
+
+    @DeleteMapping("/horses/{id}")
+    public ResponseEntity<Void> deleteHorse(@PathVariable Long id){
+        Boolean success = horseService.deleteHorseById(id);
+        return success.equals(true) ? new ResponseEntity<>(HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
     
 
 }

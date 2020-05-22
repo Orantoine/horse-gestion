@@ -55,4 +55,13 @@ public class HorseServiceImpl implements HorseService {
         return null;
     }
 
+	public Boolean deleteHorseById(Long id) {
+        if(horseRepository.findById(id).isPresent()){
+            horseRepository.deleteById(id);
+            return true;
+        }
+        return false;
+        
+	}
+
 }

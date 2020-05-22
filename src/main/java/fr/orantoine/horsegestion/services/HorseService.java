@@ -13,4 +13,6 @@ public interface HorseService {
 
     public HorseDto getHorseById(Long id);
 
+    public Boolean deleteHorseById(Long id);
+
 }
